@@ -21,7 +21,7 @@ class GameScene: SKScene {
     }
     
     func start() {
-
+        
         let background = SKSpriteNode(imageNamed: "background")
         background.anchorPoint = CGPointMake(0.5, 0.5)
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
@@ -36,22 +36,24 @@ class GameScene: SKScene {
     func showScene(sceneType:SceneType)
     {
         switch sceneType {
-            case .AnimationScene:
-                currentScene = AnimationScene()
-            case .BenchMarkScene:
-                currentScene = BenchmarkScene()
-            case .FilterSceene:
-                currentScene = BenchmarkScene()
-            case .MaskScene:
-                currentScene = BenchmarkScene()
-            case .TextScene:
-                currentScene = BenchmarkScene()
-            case .TextureScene:
-                currentScene = BenchmarkScene()
-            case .BlendModeScene:
-                currentScene = BlendModeScene()
-            case .MainSceene:
-                closeScene()
+        case .AnimationScene:
+            currentScene = AnimationScene()
+        case .BenchMarkScene:
+            currentScene = BenchmarkScene()
+        case .FilterSceene:
+            currentScene = BenchmarkScene()
+        case .MaskScene:
+            currentScene = BenchmarkScene()
+        case .TextScene:
+            currentScene = BenchmarkScene()
+        case .TextureScene:
+            currentScene = BenchmarkScene()
+        case .BlendModeScene:
+            currentScene = BlendModeScene()
+        case .MovieScene:
+            currentScene = MovieScene()
+        case .MainSceene:
+            closeScene()
         }
         
         if let myScene = currentScene
@@ -80,13 +82,13 @@ class GameScene: SKScene {
             }
         }
     }
-
+    
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
         
         let touch = touches.anyObject() as UITouch
-
+        
         var location = touch.locationInNode(mainMenu!)
         var nodes:[AnyObject]? = mainMenu!.nodesAtPoint(location)
         if let myNodes = nodes as? [SKNode]
@@ -102,7 +104,7 @@ class GameScene: SKScene {
         }
         
         location = touch.locationInNode(self)
-
+        
         nodes = self.nodesAtPoint(location)
         if let myNodes = nodes as? [SKNode]
         {
@@ -115,11 +117,11 @@ class GameScene: SKScene {
                 }
             }
         }
-
+        
         
         
     }
-   
+    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         

@@ -19,5 +19,6 @@ enum SceneType {
     case TextureScene
     case FilterSceene
     case MainSceene
-
+    case MovieScene
+    
 }

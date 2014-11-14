@@ -21,14 +21,14 @@ class BenchmarkScene:BaseScene, EnterFrameProtocol {
         
         super.init()
         button = Button(texture: SKTexture(imageNamed: "button_normal"), title: "Start benchmark")
-        button.position.y = 20 - 250;
+        button.position.y = 240 - 20;
         button.position.x = -button.frame.width/2
         self.addChild(button)
         
         self.userInteractionEnabled = true
-
+        
     }
-
+    
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -57,7 +57,7 @@ class BenchmarkScene:BaseScene, EnterFrameProtocol {
             }
         }
     }
-
+    
     private func onButtonTriggered() {
         addTestObjects()
         hasStarted = true;
@@ -73,6 +73,7 @@ class BenchmarkScene:BaseScene, EnterFrameProtocol {
             var egg:SKSpriteNode = SKSpriteNode(imageNamed: "benchmark_object")
             egg.position.x = -160 + padding + CGFloat(arc4random_uniform(320 - 2 * Int(padding)))
             egg.position.y = -250 + padding + CGFloat(arc4random_uniform(500 - 2 * Int(padding)))
+            egg.zPosition = 5
             egg.name = "eggs"
             self.addChild(egg)
         }
@@ -91,7 +92,7 @@ class BenchmarkScene:BaseScene, EnterFrameProtocol {
             {
                 spriteNode.zRotation += 0.2
             }
-
+            
         })
         count++;
         if (count < 50)

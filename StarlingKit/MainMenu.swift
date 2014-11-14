@@ -11,9 +11,12 @@ import Foundation
 import SpriteKit
 
 class MainMenu:SKNode {
-
+    
+    
+    private var buttons:[Button] = []
+    
     override init() {
-
+        
         let logo = SKSpriteNode(imageNamed: "logo")
         
         super.init()
@@ -21,9 +24,10 @@ class MainMenu:SKNode {
         self.addChild(logo)
         logo.position.y = 170;
         
+        
         let scenesToCreate = [
             ("Benchmark", SceneType.BenchMarkScene), ("Blend Modes", SceneType.BlendModeScene),
-            ("Animations", SceneType.AnimationScene)
+            ("Animations", SceneType.AnimationScene), ("MovieClip", SceneType.MovieScene)
         ]
         
         let texture:SKTexture = SKTexture(imageNamed: "button_medium")
@@ -41,13 +45,13 @@ class MainMenu:SKNode {
             {
                 button.position.y += 24;
             }
-            
+            buttons.append(button)
             self.addChild(button)
             count++
             
         }
     }
-
+    
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }    

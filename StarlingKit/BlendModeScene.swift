@@ -25,32 +25,33 @@ class BlendModeScene:BaseScene {
         (SKBlendMode.Screen, "Screen"),
         (SKBlendMode.Subtract, "Substract"),
     ]
-
+    
     override init()
     {
         
         
-        button = Button(texture:SKTexture(imageNamed:"button_normal"), title:"Switch Mode");
-        button.position.x = button.frame.width / 2;
-        button.position.y = -240;
+        button = Button(texture:SKTexture(imageNamed:"button_normal"), title:"Switch Mode")
+        button.position.x = button.frame.width / 2
+        button.position.y = 240
         
-        image = SKSpriteNode(imageNamed:"starling_rocket");
-        image.position.x = 0;
-        image.position.y = 0;
+        image = SKSpriteNode(imageNamed:"starling_rocket")
+        image.position.x = 0
+        image.position.y = 0
+        image.zPosition = 10
         
-        label = SKLabelNode(fontNamed: "Verdana")
-        label.position.x = 10;
-        label.position.y = 240;
+        label = SKLabelNode(fontNamed: "Helvetica")
+        label.position.x = 10
+        label.position.y = 180
         
         super.init()
-    
+        
         self.userInteractionEnabled = true
-        self.addChild(button);
-        self.addChild(image);
-        self.addChild(label);
-
+        self.addChild(button)
+        self.addChild(image)
+        self.addChild(label)
+        
     }
-
+    
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -83,13 +84,13 @@ class BlendModeScene:BaseScene {
     func onButtonTriggered() {
         
         let blendInfo = blendModes.removeAtIndex(0)
-
+        
         var (blendMode,title) = blendInfo
         blendModes.append(blendInfo)
         
         label.text = title
         image.blendMode = blendMode
-
+        
     }
     
 }

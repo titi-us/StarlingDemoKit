@@ -23,6 +23,7 @@
 		BF4BB0281A145C7A00D0C537 /* BaseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4BB0271A145C7A00D0C537 /* BaseScene.swift */; };
 		BF4BB02A1A145DC100D0C537 /* BlendModeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4BB0291A145DC100D0C537 /* BlendModeScene.swift */; };
 		BF4BB02C1A14654900D0C537 /* AnimationScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4BB02B1A14654900D0C537 /* AnimationScene.swift */; };
+		BF70F1951A15BE9C001393BD /* MovieScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF70F1941A15BE9C001393BD /* MovieScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		BF4BB0271A145C7A00D0C537 /* BaseScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseScene.swift; sourceTree = "<group>"; };
 		BF4BB0291A145DC100D0C537 /* BlendModeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlendModeScene.swift; sourceTree = "<group>"; };
 		BF4BB02B1A14654900D0C537 /* AnimationScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationScene.swift; sourceTree = "<group>"; };
+		BF70F1941A15BE9C001393BD /* MovieScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 				BF4BB0251A14504B00D0C537 /* BenchmarkScene.swift */,
 				BF4BB0291A145DC100D0C537 /* BlendModeScene.swift */,
 				BF4BB02B1A14654900D0C537 /* AnimationScene.swift */,
+				BF70F1941A15BE9C001393BD /* MovieScene.swift */,
 				BF4BB0271A145C7A00D0C537 /* BaseScene.swift */,
 			);
 			name = Scenes;
@@ -271,6 +274,7 @@
 				BF4BB0231A144F6800D0C537 /* SceneType.swift in Sources */,
 				BF4BB01F1A144AFE00D0C537 /* Button.swift in Sources */,
 				BF4BB0261A14504B00D0C537 /* BenchmarkScene.swift in Sources */,
+				BF70F1951A15BE9C001393BD /* MovieScene.swift in Sources */,
 				BF4BB02A1A145DC100D0C537 /* BlendModeScene.swift in Sources */,
 				BF4BB0281A145C7A00D0C537 /* BaseScene.swift in Sources */,
 				BF4BAFD91A1443D100D0C537 /* GameScene.swift in Sources */,
@@ -403,6 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StarlingKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -413,6 +418,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StarlingKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -471,6 +477,7 @@
 				BF4BAFF41A1443D200D0C537 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF4BAFF51A1443D200D0C537 /* Build configuration list for PBXNativeTarget "StarlingKitTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +486,7 @@
 				BF4BAFF71A1443D200D0C537 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

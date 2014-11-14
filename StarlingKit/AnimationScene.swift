@@ -24,7 +24,7 @@ class AnimationScene:BaseScene {
     {
         button = Button(texture: SKTexture(imageNamed: "button_normal"), title: "Start Animation")
         image = SKSpriteNode(imageNamed: "starling_front")
-        label = SKLabelNode(text: "")
+        label = SKLabelNode(fontNamed: "Helvetica")
         
         var moveAction:SKAction = SKAction.moveByX(10, y: 20, duration: 2)
         
@@ -34,23 +34,23 @@ class AnimationScene:BaseScene {
         var scaleDownAction:SKAction = SKAction.scaleTo(1, duration: 0.7)
         
         let foreverAction = SKAction.repeatActionForever(SKAction.sequence([scaleAction, scaleDownAction]))
-
+        
         actions = [moveAction, rotateAction, foreverAction]
         
         super.init()
         
         button.position.x = button.frame.width / 2;
-        button.position.y = -240 + 20;
-
+        button.position.y = 240 - 20;
+        
         
         self.addChild(button)
         self.addChild(image)
-        label.position.y = button.position.y + 40;
+        label.position.y = button.position.y - 40;
         
         self.addChild(label)
         
         self.userInteractionEnabled = true
-
+        
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -77,17 +77,17 @@ class AnimationScene:BaseScene {
             }
         }
     }
-
+    
     
     private func resetEgg() {
-        image.position.x = 20
-        image.position.y = 100
+        image.position.x = 0
+        image.position.y = 0
         image.xScale = 1.0
         image.yScale = 1.0
         image.zRotation = 0.0
         image.removeAllActions()
     }
-
+    
     private func onStartButtonTriggered() {
         
         resetEgg()
@@ -96,7 +96,7 @@ class AnimationScene:BaseScene {
         index = (index+1) % (actions.count)
     }
     
-
+    
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

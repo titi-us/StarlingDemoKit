@@ -20,8 +20,8 @@ class BaseScene:SKNode {
         super.init()
         
         self.addChild(backButton)
-        backButton.position.x = -160 - backButton.frame.width / 2;
-        backButton.position.y = 240 - backButton.frame.height + 1;
+        backButton.position.x = -backButton.frame.width / 2;
+        backButton.position.y = -240 + backButton.frame.height + 1;
 
     }
     
